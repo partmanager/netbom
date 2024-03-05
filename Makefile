@@ -22,7 +22,7 @@ docs:
 
 uml:
 	mkdir -p docs/uml
-	pyreverse netbom -d docs/uml
+	pyreverse src/netbom -d docs/uml
 	dot -Tsvg docs/uml/packages.dot -o docs/uml/packages.svg
 	dot -Tsvg docs/uml/classes.dot -o docs/uml/classes.svg
 .PHONY: uml

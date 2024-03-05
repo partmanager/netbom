@@ -1,24 +1,24 @@
 digraph "classes" {
 rankdir=BT
 charset="utf-8"
-"src.netbom.bom_readers.altium_bom_reader.AltiumBomReader" [color="black", fontcolor="black", label=<{AltiumBomReader|DATA_HEADERS_SUFIX : str<br ALIGN="LEFT"/>ROW_DATA : int<br ALIGN="LEFT"/>ROW_HEADERS : int<br ALIGN="LEFT"/>|from_excel(path): Bom<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
-"src.netbom.bom.Bom" [color="black", fontcolor="black", label=<{Bom|data<br ALIGN="LEFT"/>rows<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"src.netbom.bom.BomData" [color="black", fontcolor="black", label=<{BomData|<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"src.netbom.bom.BomRow" [color="black", fontcolor="black", label=<{BomRow|<br ALIGN="LEFT"/>|set_index(index)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
-"src.netbom.bom.BomRows" [color="black", fontcolor="black", label=<{BomRows|<br ALIGN="LEFT"/>|append(row)<br ALIGN="LEFT"/>append_by_designator(designator: str, data_dict: dict): None<br ALIGN="LEFT"/>delete(index)<br ALIGN="LEFT"/>fetch_row_by_designator(designator: str): BomRow<br ALIGN="LEFT"/>items()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
-"src.netbom.bom.BomUtils" [color="black", fontcolor="black", label=<{BomUtils|<br ALIGN="LEFT"/>|items()<br ALIGN="LEFT"/>keys()<br ALIGN="LEFT"/>values()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
-"src.netbom.netlist.Netlist" [color="black", fontcolor="black", label=<{Netlist|<br ALIGN="LEFT"/>|append(netline)<br ALIGN="LEFT"/>append_pin(net: str, designator: str, pin: str)<br ALIGN="LEFT"/>append_pins(net: str, designator: str, pins: list)<br ALIGN="LEFT"/>filter_designator(startswith: str): NetlistDesignators<br ALIGN="LEFT"/>nets(): list<br ALIGN="LEFT"/>to_dict(): dict<br ALIGN="LEFT"/>to_json(): str<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
-"src.netbom.netlist.NetlistConnection" [color="black", fontcolor="black", label=<{NetlistConnection|designator<br ALIGN="LEFT"/>pins<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"src.netbom.netlist.NetlistConnections" [color="black", fontcolor="black", label=<{NetlistConnections|<br ALIGN="LEFT"/>|append(connection): None<br ALIGN="LEFT"/>designators()<br ALIGN="LEFT"/>to_dict(): dict<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
-"src.netbom.netlist.NetlistDesignator" [color="black", fontcolor="black", label=<{NetlistDesignator|designator<br ALIGN="LEFT"/>items<br ALIGN="LEFT"/>|append(pin_net: dict): None<br ALIGN="LEFT"/>to_dict(): dict<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
-"src.netbom.netlist.NetlistDesignators" [color="black", fontcolor="black", label=<{NetlistDesignators|<br ALIGN="LEFT"/>|append(designator, pin, net): None<br ALIGN="LEFT"/>to_dict(): dict<br ALIGN="LEFT"/>to_json(): str<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
-"src.netbom.netlist.NetlistNetline" [color="black", fontcolor="black", label=<{NetlistNetline|connections<br ALIGN="LEFT"/>net<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
-"src.netbom.netlist.NetlistPins" [color="black", fontcolor="black", label=<{NetlistPins|<br ALIGN="LEFT"/>|to_list(): list<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
-"src.netbom.netlist_readers.rinf_netlist_reader.RinfNetlistReader" [color="black", fontcolor="black", label=<{RinfNetlistReader|FILE_END : str<br ALIGN="LEFT"/>FILE_HEADER : str<br ALIGN="LEFT"/>SEPARATOR : str<br ALIGN="LEFT"/>STRING_DELIMITER : str<br ALIGN="LEFT"/>|bom_and_netlist_from_file(path: str): Bom<br ALIGN="LEFT"/>bom_from_file(path: str): Bom<br ALIGN="LEFT"/>get_file_flavor(path): str<br ALIGN="LEFT"/>is_file_valid(path: str): bool<br ALIGN="LEFT"/>netlist_from_file(path: str)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
-"src.netbom.bom.BomData" -> "src.netbom.bom.BomUtils" [arrowhead="empty", arrowtail="none"];
-"src.netbom.bom.BomRow" -> "src.netbom.bom.BomUtils" [arrowhead="empty", arrowtail="none"];
-"src.netbom.bom.BomData" -> "src.netbom.bom.Bom" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="_data", style="solid"];
-"src.netbom.bom.BomRows" -> "src.netbom.bom.Bom" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="_rows", style="solid"];
-"src.netbom.netlist.NetlistConnections" -> "src.netbom.netlist.NetlistNetline" [arrowhead="odiamond", arrowtail="none", fontcolor="green", label="_connections", style="solid"];
-"src.netbom.netlist.NetlistPins" -> "src.netbom.netlist.NetlistConnection" [arrowhead="odiamond", arrowtail="none", fontcolor="green", label="_pins", style="solid"];
+"netbom.bom_readers.altium_bom_reader.AltiumBomReader" [color="black", fontcolor="black", label=<{AltiumBomReader|DATA_HEADERS_SUFIX : str<br ALIGN="LEFT"/>ROW_DATA : int<br ALIGN="LEFT"/>ROW_HEADERS : int<br ALIGN="LEFT"/>|from_excel(path): Bom<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"netbom.bom.Bom" [color="black", fontcolor="black", label=<{Bom|data<br ALIGN="LEFT"/>rows<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"netbom.bom.BomData" [color="black", fontcolor="black", label=<{BomData|<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"netbom.bom.BomRow" [color="black", fontcolor="black", label=<{BomRow|<br ALIGN="LEFT"/>|set_index(index)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"netbom.bom.BomRows" [color="black", fontcolor="black", label=<{BomRows|<br ALIGN="LEFT"/>|append(row)<br ALIGN="LEFT"/>append_by_designator(designator: str, data_dict: dict): None<br ALIGN="LEFT"/>delete(index)<br ALIGN="LEFT"/>fetch_row_by_designator(designator: str): BomRow<br ALIGN="LEFT"/>items()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"netbom.bom.BomUtils" [color="black", fontcolor="black", label=<{BomUtils|<br ALIGN="LEFT"/>|items()<br ALIGN="LEFT"/>keys()<br ALIGN="LEFT"/>values()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"netbom.netlist.Netlist" [color="black", fontcolor="black", label=<{Netlist|<br ALIGN="LEFT"/>|append(netline)<br ALIGN="LEFT"/>append_pin(net: str, designator: str, pin: str)<br ALIGN="LEFT"/>append_pins(net: str, designator: str, pins: list)<br ALIGN="LEFT"/>filter_designator(startswith: str): NetlistDesignators<br ALIGN="LEFT"/>nets(): list<br ALIGN="LEFT"/>to_dict(): dict<br ALIGN="LEFT"/>to_json(): str<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"netbom.netlist.NetlistConnection" [color="black", fontcolor="black", label=<{NetlistConnection|designator<br ALIGN="LEFT"/>pins<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"netbom.netlist.NetlistConnections" [color="black", fontcolor="black", label=<{NetlistConnections|<br ALIGN="LEFT"/>|append(connection): None<br ALIGN="LEFT"/>designators()<br ALIGN="LEFT"/>to_dict(): dict<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"netbom.netlist.NetlistDesignator" [color="black", fontcolor="black", label=<{NetlistDesignator|designator<br ALIGN="LEFT"/>items<br ALIGN="LEFT"/>|append(pin_net: dict): None<br ALIGN="LEFT"/>to_dict(): dict<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"netbom.netlist.NetlistDesignators" [color="black", fontcolor="black", label=<{NetlistDesignators|<br ALIGN="LEFT"/>|append(designator, pin, net): None<br ALIGN="LEFT"/>to_dict(): dict<br ALIGN="LEFT"/>to_json(): str<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"netbom.netlist.NetlistNetline" [color="black", fontcolor="black", label=<{NetlistNetline|connections<br ALIGN="LEFT"/>net<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"netbom.netlist.NetlistPins" [color="black", fontcolor="black", label=<{NetlistPins|<br ALIGN="LEFT"/>|to_list(): list<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"netbom.netlist_readers.rinf_netlist_reader.RinfNetlistReader" [color="black", fontcolor="black", label=<{RinfNetlistReader|FILE_END : str<br ALIGN="LEFT"/>FILE_HEADER : str<br ALIGN="LEFT"/>SEPARATOR : str<br ALIGN="LEFT"/>STRING_DELIMITER : str<br ALIGN="LEFT"/>|bom_and_netlist_from_file(path: str): Bom<br ALIGN="LEFT"/>bom_from_file(path: str): Bom<br ALIGN="LEFT"/>get_file_flavor(path): str<br ALIGN="LEFT"/>is_file_valid(path: str): bool<br ALIGN="LEFT"/>netlist_from_file(path: str)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"netbom.bom.BomData" -> "netbom.bom.BomUtils" [arrowhead="empty", arrowtail="none"];
+"netbom.bom.BomRow" -> "netbom.bom.BomUtils" [arrowhead="empty", arrowtail="none"];
+"netbom.bom.BomData" -> "netbom.bom.Bom" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="_data", style="solid"];
+"netbom.bom.BomRows" -> "netbom.bom.Bom" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="_rows", style="solid"];
+"netbom.netlist.NetlistConnections" -> "netbom.netlist.NetlistNetline" [arrowhead="odiamond", arrowtail="none", fontcolor="green", label="_connections", style="solid"];
+"netbom.netlist.NetlistPins" -> "netbom.netlist.NetlistConnection" [arrowhead="odiamond", arrowtail="none", fontcolor="green", label="_pins", style="solid"];
 }
