@@ -21,3 +21,32 @@ Imported BOM file may be used as a part of custom Manufacturing Resource Planner
 need to process electronic components required during the PCB assembly process.
 
 .. end-intro
+
+Installing
+----------
+
+As usual, you can use package installer for Python:
+
+   pip install netbom
+
+How does it work
+----------------
+
+Let's assume you have to write a document describing electrical interfaces, based on
+schematics drawn in Altium Designer. Exemplary schematic diagram is shown below:
+
+.. image:: ./docs/figures/Altium_LED-Resistor.svg
+   :align: center
+
+Normally you will open a Word document and start puting the signal names into the table.
+Then you will describe each of the signals. Doing it the first time is not a problem yet,
+but maintaining it later is time-consuming.
+Usign the Netbom library, and some markup language like LaTex or Markdown, you may
+generate pinout logical diagrams, physical diagrams and tables atomatically using a netlist
+exported directly from Altium Designer. The previously shown schematic diagram was loaded
+into the Netlist object shown below:
+
+.. image:: ./docs/figures/Altium_LED-Resistor_netlist.svg
+
+Then it can be processed and the extracted content can be automatically placed in a table
+or on an SVG template.
