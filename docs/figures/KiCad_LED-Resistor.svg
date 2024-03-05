@@ -4,9 +4,9 @@
 <svg
    version="1.1"
    id="svg132"
-   width="227.60962"
-   height="192.06699"
-   viewBox="0 0 227.60963 192.06699"
+   width="235.30074"
+   height="200.13225"
+   viewBox="0 0 235.30075 200.13225"
    sodipodi:docname="KiCad_LED-Resistor.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="2.6143933"
-     inkscape:cx="120.2956"
-     inkscape:cy="112.64564"
+     inkscape:zoom="1.8486552"
+     inkscape:cx="122.52149"
+     inkscape:cy="142.53604"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
@@ -34,9 +34,16 @@
      inkscape:current-layer="svg132" />
   <defs
      id="defs136" />
+  <rect
+     style="fill:#ffffff;stroke-width:3.02362"
+     id="rect479"
+     width="235.30074"
+     height="200.13225"
+     x="0"
+     y="0" />
   <g
      id="g140"
-     transform="matrix(1.7491498,0,0,1.7491498,-869.21735,-483.84465)"
+     transform="matrix(1.7491498,0,0,1.7491498,-866.20377,-480.5606)"
      style="stroke-width:0.571707">
     <g
        id="g146"

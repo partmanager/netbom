@@ -4,9 +4,9 @@
 <svg
    version="1.1"
    id="svg132"
-   width="346.34225"
-   height="223.55061"
-   viewBox="0 0 346.34224 223.55062"
+   width="359.45663"
+   height="234.90225"
+   viewBox="0 0 359.45662 234.90226"
    sodipodi:docname="Altium_LED-Resistor.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -24,8 +24,8 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="1.4487864"
-     inkscape:cx="63.501423"
-     inkscape:cy="144.60378"
+     inkscape:cx="115.26889"
+     inkscape:cy="67.297705"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
@@ -44,7 +44,7 @@
   </defs>
   <g
      id="g140"
-     transform="matrix(2.1220449,0,0,-2.1220449,-554.77717,766.45279)"
+     transform="matrix(2.1220449,0,0,-2.1220449,-548.21998,772.12861)"
      style="stroke-width:0.628325">
     <g
        id="g142"
@@ -63,6 +63,16 @@
             <g
                id="g154"
                style="stroke-width:0.628325">
+              <rect
+                 style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.1383"
+                 id="rect324"
+                 width="135.18884"
+                 height="88.52153"
+                 x="206.18127"
+                 y="-273.17172"
+                 transform="scale(1,-1)"
+                 rx="2.4230881"
+                 ry="2.427932" />
               <path
                  d="m 292.5279,214.5675 v -5.7604"
                  style="fill:none;stroke:#000000;stroke-width:0.360784;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"

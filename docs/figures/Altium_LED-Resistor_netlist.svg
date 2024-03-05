@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="174.48038mm"
-   height="59.161934mm"
-   viewBox="0 0 174.48038 59.161934"
+   width="176.12628mm"
+   height="60.664009mm"
+   viewBox="0 0 176.12628 60.664009"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-   sodipodi:docname="netlist.svg"
+   sodipodi:docname="Altium_LED-Resistor_netlist.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,10 +23,10 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     showgrid="true"
-     inkscape:zoom="1.025523"
-     inkscape:cx="192.58465"
-     inkscape:cy="-77.521417"
+     showgrid="false"
+     inkscape:zoom="0.72515427"
+     inkscape:cx="213.05811"
+     inkscape:cy="-55.850185"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
@@ -36,8 +36,8 @@
     <inkscape:grid
        type="xygrid"
        id="grid132"
-       originx="42.068758"
-       originy="-3.6766076" />
+       originx="42.770193"
+       originy="-3.023549" />
   </sodipodi:namedview>
   <defs
      id="defs2">
@@ -405,7 +405,14 @@
      inkscape:label="Warstwa 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(42.068752,-3.6766055)">
+     transform="translate(42.770187,-3.0235469)">
+    <rect
+       style="fill:#ffffff;stroke-width:0.799999"
+       id="rect449"
+       width="176.12628"
+       height="60.664009"
+       x="-42.770187"
+       y="3.0235469" />
     <rect
        style="fill:#eeeeee;fill-opacity:1;stroke:none;stroke-width:0.199999;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect6504-7"
@@ -540,9 +547,9 @@
        transform="translate(5.1589829,-3.3692)"><tspan
          x="39.766785"
          y="9.1900313"
-         id="tspan20342"><tspan
+         id="tspan674"><tspan
            style="text-align:center;text-anchor:middle;fill:#8f5902"
-           id="tspan20340">NetlistConnections</tspan></tspan></text>
+           id="tspan672">NetlistConnections</tspan></tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker2965-6);marker-end:url(#marker2965-6)"
        d="m 52.916671,37.570831 c 0,0 0,-23.018749 0,-23.018749 0,0 -44.9791677,0 -44.9791677,0 0,0 0,23.018748 0,23.018748"
@@ -559,9 +566,9 @@
        transform="translate(8.8633448,-3.3692)"><tspan
          x="18.01271"
          y="17.127531"
-         id="tspan20346"><tspan
+         id="tspan678"><tspan
            style="text-align:center;text-anchor:middle;fill:#8f5902"
-           id="tspan20344">NetlistConnection</tspan></tspan></text>
+           id="tspan676">NetlistConnection</tspan></tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.4;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker2965-6-9);marker-end:url(#marker2965-6-9)"
        d="m 97.887653,37.570831 c 0,0 0,-23.018749 0,-23.018749 0,0 -41.085883,0 -41.085883,0 0,0 0,23.018748 0,23.018748"
@@ -578,9 +585,9 @@
        transform="translate(7.4085271,-3.3692)"><tspan
          x="64.930679"
          y="17.127531"
-         id="tspan20350"><tspan
+         id="tspan682"><tspan
            style="text-align:center;text-anchor:middle;fill:#8f5902"
-           id="tspan20348">NetlistConnection</tspan></tspan></text>
+           id="tspan680">NetlistConnection</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-size:2.82222px;line-height:1.25;font-family:sans-serif;text-align:start;text-anchor:start;stroke-width:0.264582"
