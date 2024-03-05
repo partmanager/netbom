@@ -1,0 +1,20 @@
+.HEA
+.TIM 2024-03-05T00:08:31+0100
+.APP "Eeschema 8.0.0"
+.TYP FULL
+
+.ADD_COM     R1     "1k"     "Resistor_SMD:R_0402_1005Metric"
+.ADD_COM     D1     "LED"     "LED_SMD:LED_0603_1608Metric"
+.ADD_COM     J1     "Conn_01x02_Pin"     "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+
+
+.ADD_TER   D1   1     "Net-(D1-K)"
+.TER       R1   1
+
+.ADD_TER   J1   2     "GND"
+.TER       R1   2
+
+.ADD_TER   D1   2     "+3.3V"
+.TER       J1   1
+
+.END

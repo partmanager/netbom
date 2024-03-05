@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  netbom_backend:
+    container_name: netbom_backend
+    image: netbom_backend/python:3.12-slim-bookworm
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    deploy:
+        restart_policy:
+            condition: on-failure
+    tty: true
+    volumes:
+      - ./:/mnt/netbom_backend
