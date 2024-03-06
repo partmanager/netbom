@@ -3,16 +3,30 @@ on: [push, pull_request]
 
 jobs:
   tests:
+    name: ${{ matrix.python_version }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {python_version: '3.12'}
+          - {python_version: '3.11'}
+          - {python_version: '3.10'}
     steps:
-      - name: Install dependencies
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
       - name: Set env
         run: echo "PYTHONPATH=$PWD/src:$PYTHONPATH" >> "$GITHUB_ENV"
       - name: install dependencies
         run: pip install -r requirements-tests.txt
+      - name: Print used versions
+        run: make versions
       - name: Run unittests
         run: make unittests
       - name: Run Sphinx doctests

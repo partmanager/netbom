@@ -32,7 +32,6 @@ doctests:
 .PHONY: doctests
 
 unittests:
-	python --version
 	python tests/test_bom.py
 	python tests/test_bom_readers.py
 	python tests/test_netlist.py
@@ -47,6 +46,11 @@ tests:
 lint:
 	pylint netbom/netlist.py
 .PHONY: lint
+
+versions:
+	python --version
+	pip freeze
+.PHONY: versions
 
 freeze:
 	pip freeze > requirements.txt
