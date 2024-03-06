@@ -5,6 +5,9 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
+      permissions:
+        pages: write
+        id-token: write
       - name: Checkout
         uses: actions/checkout@v4
         with:
