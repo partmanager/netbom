@@ -3,11 +3,11 @@ on: [push, pull_request]
 
 jobs:
   docs:
+    permissions:
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     steps:
-      permissions:
-        pages: write
-        id-token: write
       - name: Checkout
         uses: actions/checkout@v4
         with:
