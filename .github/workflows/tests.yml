@@ -11,3 +11,5 @@ jobs:
           fetch-depth: 0
       - name: Set env
         run: echo "PYTHONPATH=$PWD/src:$PYTHONPATH" >> "$GITHUB_ENV"
+      - name: Run tests
+        run: make tests
