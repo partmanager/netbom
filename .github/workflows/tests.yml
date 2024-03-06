@@ -12,7 +12,7 @@ jobs:
       - name: Set env
         run: echo "PYTHONPATH=$PWD/src:$PYTHONPATH" >> "$GITHUB_ENV"
       - name: install dependencies
-        run: pip install -r requirements-dev.txt
+        run: pip install -r requirements-tests.txt
       - name: Run unittests
         run: make unittests
       - name: Run Sphinx doctests
