@@ -20,7 +20,7 @@ jobs:
       - name: Setup python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python }}
+          python-version: ${{ matrix.python_version }}
       - name: Set env
         run: echo "PYTHONPATH=$PWD/src:$PYTHONPATH" >> "$GITHUB_ENV"
       - name: install dependencies
