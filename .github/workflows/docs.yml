@@ -20,7 +20,9 @@ jobs:
         id: pages
         uses: actions/configure-pages@v3
       - name: Build with Sphinx
-        run: make docs
+        run: |
+          sudo apt-get install pylint graphviz -y
+          make docs
       - name: Show things
         run: |
           ls -la
