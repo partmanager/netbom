@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           # upload entire directory
-          path: './docs/_build/html/'
+          path: './docs/_build/'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
