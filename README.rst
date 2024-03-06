@@ -30,7 +30,7 @@ As usual, you can use package installer for Python:
 Repository
 ----------
 
-Code is maintained on GitHub: `github.com/partmanager/netbom <https://github.com/partmanager/netbom`_.
+Code is maintained on GitHub: `github.com/partmanager/netbom <https://github.com/partmanager/netbom>`_.
 
 .. end-intro
 
