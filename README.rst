@@ -35,7 +35,7 @@ How does it work
 Let's assume you have to write a document describing electrical interfaces, based on
 schematics drawn in Altium Designer. Exemplary schematic diagram is shown below:
 
-.. image:: https://github.com/partmanager/netbom/blob/poc/docs/figures/Altium_LED-Resistor.svg
+.. image:: https://raw.githubusercontent.com/partmanager/netbom/poc/docs/figures/Altium_LED-Resistor.svg
    :align: center
 
 Normally you will open a Word document and start puting the signal names into the table.
@@ -46,7 +46,7 @@ generate pinout logical diagrams, physical diagrams and tables automatically usi
 netlist (i.e. RINF Netlist) exported directly from Altium Designer. The previously shown 
 schematic diagram was loaded into the Netlist object shown below:
 
-.. image:: https://github.com/partmanager/netbom/blob/poc/docs/figures/Altium_LED-Resistor_netlist.svg
+.. image:: https://raw.githubusercontent.com/partmanager/netbom/poc/docs/figures/Altium_LED-Resistor_netlist.svg
 
 Then it can be processed and the extracted content can be automatically placed in a table
 or on an SVG template.
