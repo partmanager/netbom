@@ -22,6 +22,13 @@ need to process electronic components required during the PCB assembly process.
 
 .. end-intro
 
+Documentation
+-------------
+
+Get the latest documentation build:
+
+.. _Documentation link: https://partmanager.github.io/netbom
+
 Installing
 ----------
 
