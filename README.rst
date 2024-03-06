@@ -20,19 +20,24 @@ and generate aesthetic documents in LaTeX.
 Imported BOM file may be used as a part of custom Manufacturing Resource Planner, where you 
 need to process electronic components required during the PCB assembly process.
 
-.. end-intro
-
-Documentation
--------------
-
-Get the latest documentation build: `partmanager.github.io/netbom <https://partmanager.github.io/netbom>`_.
-
 Installing
 ----------
 
 As usual, you can use package installer for Python:
 
    pip install netbom
+
+Repository
+----------
+
+Code is maintained on GitHub: `github.com/partmanager/netbom <https://github.com/partmanager/netbom`_.
+
+.. end-intro
+
+Documentation
+-------------
+
+Get the latest documentation build: `partmanager.github.io/netbom <https://partmanager.github.io/netbom>`_.
 
 How does it work
 ----------------
@@ -56,8 +61,3 @@ schematic diagram was loaded into the Netlist object shown below:
 
 Then it can be processed and the extracted content can be automatically placed in a table
 or on an SVG template.
-
-Repository
-----------
-
-Code is maintained on GitHub: `github.com/partmanager/netbom <https://github.com/partmanager/netbom`_.
