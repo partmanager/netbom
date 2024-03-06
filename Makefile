@@ -27,12 +27,21 @@ uml:
 	dot -Tsvg docs/uml/classes.dot -o docs/uml/classes.svg
 .PHONY: uml
 
-tests:
+doctests:
+	python -m doctest -v docs/index.rst docs/netlist.rst docs/netlist_readers.rst
+.PHONY: doctests
+
+unittests:
+	python --version
 	python tests/test_bom.py
 	python tests/test_bom_readers.py
 	python tests/test_netlist.py
 	python tests/test_netlist_readers.py
-	python -m doctest -v docs/index.rst docs/netlist.rst docs/netlist_readers.rst
+.PHONY: unittests
+
+tests:
+	make unittests
+	make doctests
 .PHONY: tests
 
 lint:

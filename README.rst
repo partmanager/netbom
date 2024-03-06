@@ -47,6 +47,7 @@ netlist (i.e. RINF Netlist) exported directly from Altium Designer. The previous
 schematic diagram was loaded into the Netlist object shown below:
 
 .. image:: https://raw.githubusercontent.com/partmanager/netbom/poc/docs/figures/Altium_LED-Resistor_netlist.svg
+   :align: center
 
 Then it can be processed and the extracted content can be automatically placed in a table
 or on an SVG template.
