@@ -25,9 +25,7 @@ need to process electronic components required during the PCB assembly process.
 Documentation
 -------------
 
-Get the latest documentation build:
-
-.. _Documentation link: https://partmanager.github.io/netbom
+Get the latest documentation build: `partmanager.github.io/netbom <https://partmanager.github.io/netbom>`_.
 
 Installing
 ----------
@@ -58,3 +56,8 @@ schematic diagram was loaded into the Netlist object shown below:
 
 Then it can be processed and the extracted content can be automatically placed in a table
 or on an SVG template.
+
+Repository
+----------
+
+Code is maintained on GitHub: `github.com/partmanager/netbom <https://github.com/partmanager/netbom`_.
