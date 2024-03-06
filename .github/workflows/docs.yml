@@ -1,0 +1,38 @@
+name: Build and push docs
+on: [push, pull_request]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set env
+        run: echo "PYTHONPATH=$PWD/src:$PYTHONPATH" >> "$GITHUB_ENV"
+      - name: install dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./docs/
+          destination: ./docs/_build/
+      - name: Show things
+        run: |
+          ls -la
+          ls -la ./docs/
+          ls -la ./docs/_build/
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          # upload entire directory
+          path: './docs/_build/html/'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+      - name: Show github Pages URL
+        run: echo "${{ steps.deployment.outputs.page_url }}" >> $GITHUB_OUTPUT
