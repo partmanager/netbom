@@ -27,11 +27,6 @@ As usual, you can use package installer for Python:
 
    pip install netbom
 
-Repository
-----------
-
-Code is maintained on GitHub: `github.com/partmanager/netbom <https://github.com/partmanager/netbom>`_.
-
 .. end-intro
 
 Documentation

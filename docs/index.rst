@@ -5,7 +5,6 @@ Welcome to netbom's documentation!
    :start-after: start-intro
    :end-before: end-intro
 
-
 Provided modules
 ================
 
@@ -20,9 +19,7 @@ This library is composed of following modules (highest level at the bottom):
    netlist
    netlist_readers
 
-Indices and tables
-==================
+Repository
+==========
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+Code is maintained on GitHub: `github.com/partmanager/netbom <https://github.com/partmanager/netbom>`_.

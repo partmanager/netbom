@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - run: python3 -m pip install --upgrade build && python3 -m build
@@ -33,7 +33,7 @@ jobs:
         run: pip install -r requirements-dev.txt
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
       - name: Build with Sphinx
         run: |
           sudo apt-get install pylint graphviz -y
