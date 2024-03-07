@@ -102,6 +102,12 @@ class TestBom(unittest.TestCase):
         self.assertEqual(row["Designator"], "C129")
 
         self.assertEqual(bom_rows.fetch_row_by_designator("FB4"), None)
+    
+    def test_fetch_row_by_designator_with_roomletter(self):
+        bom_rows = BomRows()
+        bom_rows.append_by_designator("C4B", data_dict={"Footprint": "C_1206"})
+        row = bom_rows.fetch_row_by_designator("C4B")
+        self.assertEqual(row["Designator"], "C4")
 
 if __name__ == '__main__':
     unittest.main()

@@ -76,7 +76,8 @@ class BomRows:
             self._rows.append(BomRow(data_dict))
 
     def fetch_row_by_designator(self, designator: str) -> BomRow:
-        index = self._row_index_by_designator(designator)
+        stripped = self._strip_designator_roomletter(designator)
+        index = self._row_index_by_designator(stripped)
         if index is not None:
             return self._rows[index]
 
@@ -85,7 +86,7 @@ class BomRows:
             if row["Designator"] == designator:
                 return index
 
-    def _strip_designator_roomletter(self, designator: str) -> None:
+    def _strip_designator_roomletter(self, designator: str) -> None: # [TODO] Wrong return type
         output = []
         was_char_numeric = False
         for char in designator:

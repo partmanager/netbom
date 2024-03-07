@@ -238,6 +238,9 @@ class NetlistDesignators:
                                 'pin_nets': pin_net})
         return str(json.dumps(designators))
 
+    def __add__(self):
+        raise NotImplementedError("TODO")
+
     def __len__(self) -> int:
         return len(self._items)
 
@@ -359,6 +362,9 @@ class Netlist:
                     for pin in connection.pins:
                         designators.append(connection.designator, pin, netline.net)
         return designators
+
+    def __add__(self):
+        raise NotImplementedError("TODO")
 
     def __len__(self) -> int:
         return len(self._items)

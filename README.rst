@@ -25,6 +25,8 @@ Installing
 
 As usual, you can use package installer for Python:
 
+.. code:: bash
+
    pip install netbom
 
 .. end-intro
