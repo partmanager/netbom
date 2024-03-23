@@ -56,6 +56,20 @@ Recreating netlist manually based on Altium Designer's schematic shown above, th
    >>> print(netlist.to_json())
    [{"net": "NetD1_1", "connections": [{"designator": "D1", "pins": ["1"]}, {"designator": "R1", "pins": ["2"]}]}, {"net": "GND", "connections": [{"designator": "J1", "pins": ["2"]}, {"designator": "R1", "pins": ["1"]}]}, {"net": "+3.3V", "connections": [{"designator": "D1", "pins": ["2"]}, {"designator": "J1", "pins": ["1"]}]}]
 
+   >>> # Adding orphaned net which has only one component and only one pin connected
+   >>> netlist.append_pin('NetR2_1', 'R2', '1')
+   >>> print(netlist)
+   {'NetD1_1': {'D1': ['1'], 'R1': ['2']}, 'GND': {'J1': ['2'], 'R1': ['1']}, '+3.3V': {'D1': ['2'], 'J1': ['1']}, 'NetR2_1': {'R2': ['1']}}
+   >>> # Removing orphaned net
+   >>> netlist.remove_orphans()
+   >>> print(netlist)
+   {'NetD1_1': {'D1': ['1'], 'R1': ['2']}, 'GND': {'J1': ['2'], 'R1': ['1']}, '+3.3V': {'D1': ['2'], 'J1': ['1']}}
+   >>> # Two pins of the same component connected to the same net do not orphan the net
+   >>> netlist.append_pin('NetR2_1', 'R2', '1')
+   >>> netlist.append_pin('NetR2_1', 'R2', '2')
+   >>> netlist.remove_orphans()
+   >>> print(netlist)
+   {'NetD1_1': {'D1': ['1'], 'R1': ['2']}, 'GND': {'J1': ['2'], 'R1': ['1']}, '+3.3V': {'D1': ['2'], 'J1': ['1']}, 'NetR2_1': {'R2': ['1', '2']}}
 
 Reference
 ---------

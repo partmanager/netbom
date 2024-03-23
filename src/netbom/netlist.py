@@ -363,6 +363,24 @@ class Netlist:
                         designators.append(connection.designator, pin, netline.net)
         return designators
 
+    def remove_orphans(self) -> None:
+        """Method which removes orphaned nets that have only one
+        connection and one pin. Orphaned net is simply connected to only
+        one component and only one pin.
+        """
+        netlist = Netlist()
+        for netline in self:
+            orphaned = True
+            if len(netline.connections) > 1:
+                orphaned = False
+            elif len(netline.connections) == 1:
+                for connection in netline.connections:
+                    if len(connection.pins) > 1:
+                        orphaned = False
+            if not orphaned:
+                netlist.append(netline)
+        self._items = netlist._items
+
     def __add__(self):
         raise NotImplementedError("TODO")
 
