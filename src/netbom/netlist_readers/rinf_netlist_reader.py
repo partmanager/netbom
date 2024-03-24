@@ -31,28 +31,32 @@ class RinfNetlistReader:
         bom, _ = self.bom_and_netlist_from_file(path)
         return bom
 
-    def netlist_from_file(self, path: str):
+    def netlist_from_file(self, path: str, orphaned_nets: bool=False):
         """RINF Netlist importer from a file with frp extension.
         It imports netlist only.
 
         :param path: RINF Netlist file path with frp extension.
         :type path: str
+        :param orphaned_nets: orphaned nets removed if set to False, defaults to False
+        :type orphaned_nets: bool, optional
         :return: imported Netlist.
         :rtype: Netlist
         """
-        _, netlist = self.bom_and_netlist_from_file(path)
+        _, netlist = self.bom_and_netlist_from_file(path, orphaned_nets)
         return netlist
 
-    def bom_and_netlist_from_file(self, path: str) -> Bom:
+    def bom_and_netlist_from_file(self, path: str, orphaned_nets: bool=False) -> Bom:
         """RINF Netlist importer from a file with frp extension.
         It imports both comprehensive BOM and netlist.
 
         :param path: RINF Netlist file path with frp extension.
         :type path: str
+        :param orphaned_nets: orphaned nets removed if set to False, defaults to False
+        :type orphaned_nets: bool, optional
         :return: imported tuple of Bom and Netlist.
         :rtype: tuple(Bom, Netlist)
         """
-
+        # [TODO] to better implement importing method - pylint R0912
         data_dict = {}
         designator = ''
         net = ''
@@ -92,6 +96,8 @@ class RinfNetlistReader:
 
                 if command == '.END':
                     break
+        if not orphaned_nets:
+            netlist.remove_orphans()
         return bom, netlist
 
     def is_file_valid(self, path: str) -> bool:
@@ -113,6 +119,7 @@ class RinfNetlistReader:
         :return: .APP parameter value
         :rtype: str
         """
+        # [TODO] move return to the end of method - pylint R1710
         lines = self._read_file_lines(path)
         for line in lines:
             command, params = self._parse_line(line)
