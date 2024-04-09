@@ -32,6 +32,7 @@ class BomUtils:
 
 class BomRow(BomUtils):
     def __init__(self, data_dict={}, index=None, is_type_bom=True):
+        # [TODO] refactor this class to allow other keys
         self._data = {"Part Number": "",
                       "Value": "",
                       "Footprint": "",
@@ -40,6 +41,7 @@ class BomRow(BomUtils):
                       "Voltage": "",
                       "Dielectric": "",
                       "Manufacturer Part Number": "",
+                      "Manufacturer": "",
                       "Comment": "",
                       "Designator": "",
                       "HelpURL": "",
@@ -128,6 +130,7 @@ class BomRows:
 
 class BomData(BomUtils):
     def __init__(self, data_dict={}):
+        # [TODO] refactor this class to allow other keys
         self._data = {"Project": "",
                       "Equipment": "",
                       "BatchNumber": "",
