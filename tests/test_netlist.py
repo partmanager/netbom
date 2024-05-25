@@ -68,6 +68,13 @@ class TestNetlist(unittest.TestCase):
         netlist.append_pins('NetR1_1', 'R1', ['A44', 'A4'])
         self.assertEqual(netlist.to_dict(), {'NetR1_1': {'R1': ['1', '2', 'A4', 'A44']}})
 
+    def test_netlist_alphanumeric_pins_natural_sorting(self):
+        netlist = Netlist()
+        netlist.append_pins('NetR1_1', 'R1', ['3', '4', '6', '5', '7', '8', '1', '2',
+                                              '9', '10', '12', '11', 'A100', 'A10', 'A2'])
+        self.assertEqual(netlist.to_dict(), {'NetR1_1': {'R1': ['1', '2', '3', '4', '5', '6', '7', '8',
+                                                                '9', '10', '11', '12', 'A2', 'A10', 'A100']}})
+
     def test_large_netlist_and_append_pin(self):
         netlist = Netlist()
         for i in range(0, 1000):

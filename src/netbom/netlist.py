@@ -15,6 +15,26 @@ using following schematic diagram:
 """
 
 import json
+import re
+
+
+def natsort(string):
+
+    start_digits     = (re.search(r'(?x)^\d+    ', string) or re.search('inf', 'inf')).group()
+    start_non_digits = (re.search(r'(?x)^\D+    ', string) or re.search(   '',    '')).group()
+    end_non_digits   = (re.search(r'(?x)\D+$    ', string) or re.search(   '',    '')).group()
+    start_lower      = (re.search(r'(?x)^[a-z]+ ', string) or re.search(   '',    '')).group()
+    start_upper      = (re.search(r'(?x)^[A-Z]+ ', string) or re.search(   '',    '')).group()
+    all_digits       = [ float(n) for n in re.findall('\d+', string) or ['inf'] ]
+
+    return (
+        float(start_digits),
+        start_non_digits.casefold(),
+        start_upper,
+        start_lower,
+        end_non_digits,
+        all_digits
+    )
 
 
 class NetlistPins:
@@ -39,7 +59,7 @@ class NetlistPins:
             if pin not in self:
                 self._items += [str(pin)]
         if len(self) > 1:
-            self._items.sort()
+            self._items = sorted(self._items, key=natsort)
         return self
 
     def __iter__(self):
