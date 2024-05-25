@@ -19,22 +19,21 @@ import re
 
 
 def natsort(string):
-
+    # Source: https://www.reddit.com/r/learnpython/comments/vp3nnv/simple_way_to_do_alphanumeric_sorting_in_python/
+    # [TODO] to implement better natural sorting algorithm
     start_digits     = (re.search(r'(?x)^\d+    ', string) or re.search('inf', 'inf')).group()
     start_non_digits = (re.search(r'(?x)^\D+    ', string) or re.search(   '',    '')).group()
     end_non_digits   = (re.search(r'(?x)\D+$    ', string) or re.search(   '',    '')).group()
     start_lower      = (re.search(r'(?x)^[a-z]+ ', string) or re.search(   '',    '')).group()
     start_upper      = (re.search(r'(?x)^[A-Z]+ ', string) or re.search(   '',    '')).group()
-    all_digits       = [ float(n) for n in re.findall('\d+', string) or ['inf'] ]
+    all_digits       = [float(n) for n in re.findall('\d+', string) or ['inf']]
 
-    return (
-        float(start_digits),
-        start_non_digits.casefold(),
-        start_upper,
-        start_lower,
-        end_non_digits,
-        all_digits
-    )
+    return (float(start_digits),
+            start_non_digits.casefold(),
+            start_upper,
+            start_lower,
+            end_non_digits,
+            all_digits)
 
 
 class NetlistPins:

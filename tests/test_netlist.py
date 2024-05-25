@@ -34,19 +34,15 @@ class TestConnections(unittest.TestCase):
 
 
 class TestNetlist(unittest.TestCase):
-    def _template_netlist(self):
+    def test_netlist_duplicated_net_designator_and_pins(self):
         netlist = Netlist()
         netlist.append_pins('NetR1_1', 'R1', ['1', '2'])
-        self.assertEqual(len(netlist), 1)
-        return netlist
-
-    def test_netlist_duplicated_net_designator_and_pins(self):
-        netlist = self._template_netlist()
         netlist.append_pins('NetR1_1', 'R1', ['1', '2'])
         self.assertEqual(netlist.to_dict(), {'NetR1_1': {'R1': ['1', '2']}})
 
     def test_netlist_duplicated_designator_and_pins(self):
-        netlist = self._template_netlist()
+        netlist = Netlist()
+        netlist.append_pins('NetR1_1', 'R1', ['1', '2'])
         netlist.append_pins('NetR2_2', 'R1', ['1', '2'])
         # [TODO] method: detecting designators and pins connected to the same net
         self.assertEqual(netlist.to_dict(), {'NetR1_1': {'R1': ['1', '2']},
@@ -54,17 +50,20 @@ class TestNetlist(unittest.TestCase):
         self.assertEqual(len(netlist), 2)
 
     def test_netlist_duplicated_net_and_designator(self):
-        netlist = self._template_netlist()
+        netlist = Netlist()
+        netlist.append_pins('NetR1_1', 'R1', ['1', '2'])
         netlist.append_pins('NetR1_1', 'R1', ['3', '4'])
         self.assertEqual(netlist.to_dict(), {'NetR1_1': {'R1': ['1', '2', '3', '4']}})
 
     def test_netlist_numeric_pins_sorting(self):
-        netlist = self._template_netlist()
+        netlist = Netlist()
+        netlist.append_pins('NetR1_1', 'R1', ['1', '2'])
         netlist.append_pins('NetR1_1', 'R1', ['4', '7'])
         self.assertEqual(netlist.to_dict(), {'NetR1_1': {'R1': ['1', '2', '4', '7']}})
 
     def test_netlist_alphanumeric_pins_sorting(self):
-        netlist = self._template_netlist()
+        netlist = Netlist()
+        netlist.append_pins('NetR1_1', 'R1', ['1', '2'])
         netlist.append_pins('NetR1_1', 'R1', ['A44', 'A4'])
         self.assertEqual(netlist.to_dict(), {'NetR1_1': {'R1': ['1', '2', 'A4', 'A44']}})
 
