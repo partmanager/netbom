@@ -179,14 +179,12 @@ class NetlistDesignator:
         self._items = pin_net
 
     def append(self, pin_net: dict) -> None:
-        """Method appending new {pin: net} pairs, deduplicating
-        and sorting them.
+        """Method appending new {pin: net} pairs and deduplicating them.
 
         :param pin_net: {pin: net} dictionary
         :type pin_net: dict
         """
         self._items.update(pin_net)
-        self._items = dict(sorted(self._items.items()))
 
     def to_dict(self) -> dict:
         """Method converting NetlistDesignator to dict.
