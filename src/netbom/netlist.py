@@ -185,6 +185,12 @@ class NetlistDesignator:
         :type pin_net: dict
         """
         self._items.update(pin_net)
+        # [TODO] implement more efficient natural sorting
+        keys = sorted(self._items.keys(), key=natsort)
+        new_items = {}
+        for key in keys:
+            new_items.update({key: self._items[key]})
+        self._items = new_items
 
     def to_dict(self) -> dict:
         """Method converting NetlistDesignator to dict.

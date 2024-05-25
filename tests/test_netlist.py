@@ -75,6 +75,19 @@ class TestNetlist(unittest.TestCase):
         self.assertEqual(netlist.to_dict(), {'NetR1_1': {'R1': ['1', '2', '3', '4', '5', '6', '7', '8',
                                                                 '9', '10', '11', '12', 'A2', 'A10', 'A100']}})
 
+    def test_filter_designator_natural_sorting(self):
+        netlist = Netlist()
+        netlist.append_pins('NetR1_1', 'R1', ['A100', 'A2'])
+        netlist.append_pins('NetD1_1', 'R1', ['3', '9'])
+        netlist.append_pins('NetT1_1', 'R1', ['8', 'A10'])
+        netlist.append_pins('NetT2_1', 'R1', ['6', '1'])
+        netlist.append_pins('NetD1_2', 'R1', ['4', '2'])
+        netlist.append_pins('NetA1_2', 'R1', ['7', '10'])
+        netlist.append_pins('NetB1_2', 'R1', ['5', '12', '11'])
+        designators = netlist.filter_designator('R1')
+        self.assertEqual(list(designators.to_dict()['R1'].keys()), ['1', '2', '3', '4', '5', '6', '7', '8',
+                                                                    '9', '10', '11', '12', 'A2', 'A10', 'A100'])
+
     def test_large_netlist_and_append_pin(self):
         netlist = Netlist()
         for i in range(0, 1000):
