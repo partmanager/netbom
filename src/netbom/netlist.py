@@ -168,6 +168,10 @@ class NetlistNetline:
     def connections(self):
         return self._connections
 
+    @net.setter
+    def net(self, net: str):
+        self._net = net
+
     def __str__(self) -> str:
         return str(self._net) + ': ' + str(self._connections)
 

@@ -134,7 +134,7 @@ class RinfNetlistReader:
         :return: Lines imported from frp file.
         :rtype: list
         """
-        with open(path, 'r', encoding='utf-8') as file:
+        with open(path, 'r') as file:
             return [line.rstrip() for line in file]
 
     def _parse_line(self, line: str) -> tuple:
